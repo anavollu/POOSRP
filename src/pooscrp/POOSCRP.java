@@ -7,10 +7,10 @@ import reports.EmployeeReport;
 public class POOSCRP {
 
     public static void main(String[] args) {
-        Employee emp1 = new Employee(1L, "joao", "finanças", true);
-        Employee emp2 = new Employee(2L, "carlos", "finanças", true);
-        Employee emp3 = new Employee(3L, "bruno", "finanças", true);
-        Employee emp4 = new Employee(4L, "marcelo", "finanças", true);
+        Employee emp1 = new Employee("joao", "finanças", true);
+        Employee emp2 = new Employee("carlos", "finanças", true);
+        Employee emp3 = new Employee("bruno", "finanças", true);
+        Employee emp4 = new Employee("marcelo", "finanças", true);
 
         EmployeeReport empReport = new EmployeeReport();
         System.out.println("Print XML REPORT employee 1");

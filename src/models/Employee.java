@@ -1,24 +1,25 @@
 package models;
 
+import java.util.Objects;
+
 public class Employee {
 
-    long id;
+    Long id;
     String name;
     String department;
     boolean working;
 
-    public Employee(long id, String name, String department, boolean working) {
-        this.id = id;
+    public Employee(String name, String department, boolean working) {
         this.name = name;
         this.department = department;
         this.working = working;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -48,8 +49,8 @@ public class Employee {
 
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 97 * hash + (int) (this.id ^ (this.id >>> 32));
+        int hash = 3;
+        hash = 67 * hash + Objects.hashCode(this.id);
         return hash;
     }
 
@@ -65,7 +66,7 @@ public class Employee {
             return false;
         }
         final Employee other = (Employee) obj;
-        if (this.id != other.id) {
+        if (!Objects.equals(this.id, other.id)) {
             return false;
         }
         return true;
