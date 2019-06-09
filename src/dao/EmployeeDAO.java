@@ -6,8 +6,8 @@ import models.Employee;
 
 public class EmployeeDAO {
 
-    public static Set<Employee> employees = new HashSet<>();
-    
+    private static Set<Employee> employees = new HashSet<>();
+
     public Employee saveEmployeeToDatabase(Employee employee) {
         EmployeeDAO.employees.add(employee);
         return employee;
@@ -16,5 +16,9 @@ public class EmployeeDAO {
     public void terminateEmployee(long id) {
         Employee emp = new Employee(id, "", "", true);
         employees.remove(emp);
+    }
+
+    public Set<Employee> getAllEmployees() {
+        return EmployeeDAO.employees;
     }
 }
